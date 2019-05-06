@@ -11,7 +11,7 @@
         <ul class="navbar-nav">
           {% for nav in site.data.navigation %}
             <li class="nav-item {% if page.url == nav.href %}active{% endif %}">
-              <a class="nav-link {% if nav.subcategories != null %}has-subcat{% endif %}" href="{{ nav.href }}">{{ nav.title }}</a>
+              <a class="nav-smooth nav-link {% if nav.subcategories != null %}has-subcat{% endif %}" href="{{ nav.href }}">{{ nav.title }}</a>
               {% if nav.subcategories != null %}
                 <span class="dropdown-chevron-mobile"></span>
               {% endif %}
@@ -19,7 +19,7 @@
                 <ul class="subcategory">
                   {% for subcategory in nav.subcategories %}
                     <li class="nav-subitem">
-                      <a class="nav-sublink" href="{{ subcategory.subhref }}">
+                      <a class="nav-smooth nav-sublink" href="{{ subcategory.subhref }}">
                         {{ subcategory.subtitle }}
                       </a>
                     </li>

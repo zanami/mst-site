@@ -1,7 +1,7 @@
 # example /_data/navigation.yml
-- title: "Техника в наличии"
-  href: "#section-list"
 - title: "Характеристики"
   href: "#section-tech"
+- title: "Техника в наличии"
+  href: "#section-list"
 - title: "Контакты"
   href: "#section-contacts"
