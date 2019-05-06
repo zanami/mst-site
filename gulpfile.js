@@ -56,6 +56,7 @@ function js() {
   .pipe(concatjs('app.bundle.js'))
   .pipe(gulp.dest(paths.scripts.dest))
   .pipe(browserSync.reload({stream:true}))
+  .pipe(gulp.dest(paths.scripts.destsecond))
 }
 
 function browserSyncServe(done) {
