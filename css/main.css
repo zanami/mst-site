@@ -12850,6 +12850,10 @@ img {
   }
 }
 
+.home-card .home-card-content p {
+  font-size: 80%;
+}
+
 /* Layout */
 /* Top bar */
 .topbar {
