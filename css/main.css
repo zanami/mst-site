@@ -12706,6 +12706,10 @@ img {
 
 /* Page */
 /* Home Page */
+.ymaps-2-1-73-controls__toolbar {
+  display: none;
+}
+
 .section-title {
   text-transform: uppercase;
   color: #424246;
