@@ -1,6 +1,8 @@
 $(document).on('click', '[data-toggle="lightbox"]', function(event) {
   event.preventDefault();
-  $(this).ekkoLightbox();
+  $(this).ekkoLightbox({
+    alwaysShowClose: true,
+  });
 });
 
 $('.dropdown-chevron-mobile').on('click', function(e) {

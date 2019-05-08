@@ -1,7 +1,8 @@
 /* Magnific Popup */
-$('.image-link').magnificPopup({
+/*$('.image-link').magnificPopup({
   type:'image',
   gallery: {
     enabled: true
   }
 });
+*/ 
