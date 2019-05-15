@@ -12806,6 +12806,10 @@ img {
   opacity: 0.9;
 }
 
+.home-card .icon-zoom {
+  z-index: 5;
+}
+
 @media (max-width: 991.98px) {
   .home-card {
     margin-bottom: 40px;

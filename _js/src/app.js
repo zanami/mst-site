@@ -43,3 +43,20 @@ $(".nav-smooth").on('click', function(event) {
   } // End if
 
 });
+
+
+// modal options
+
+$('#specsModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('selected') // Extract info from data-* attributes
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this);
+  modal.find('th.' + recipient).addClass('bg-success');
+  modal.find('td.' + recipient).addClass('bg-light');
+})
+$('#specsModal').on('hide.bs.modal', function (event) {
+  var modal = $(this);
+  modal.find('th').removeClass('bg-success');
+  modal.find('td').removeClass('bg-light');
+})

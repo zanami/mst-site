@@ -82,6 +82,9 @@
       opacity: 0.9;
     }
   }
+  .icon-zoom {
+    z-index: 5;
+  }
   @include media-breakpoint-down(md) {
     @include rem(margin-bottom, 40px);
     img {
