@@ -134,91 +134,36 @@ layout: default
   <div class="container">
     <h2 class="text-center mb-4 section-title">Экскаваторы-погрузчики MST в наличии</h2>
     <div class="row">
-      <div class="col-xl-3 col-lg-3">
-        <div class="home-card">
-            <i class="fa fa-search-plus icon-zoom icons position-absolute text-muted m-2"></i>
-            <a href="img/542-1.jpg" data-type="image" data-toggle="lightbox" data-gallery="mst542" data-title="MST 542"><img src="img/mst-542.jpg" alt="Sanko Makina MST 542"></a>
-          <div data-toggle="lightbox" data-type="image" data-gallery="mst542" data-remote="img/542-2.jpg" data-title="MST 542"></div>
-          <div data-toggle="lightbox" data-type="image" data-gallery="mst542" data-remote="img/542-3.jpg" data-title="MST 542"></div>
-          <div data-toggle="lightbox" data-type="image" data-gallery="mst542" data-remote="img/54x-lever1.jpg" data-title="Органы управления MST 542"></div>
-          <div data-toggle="lightbox" data-type="image" data-gallery="mst542" data-remote="img/54x-lever2.jpg" data-title="Рычаги управления навесным оборудованием"></div>
-          <div data-toggle="lightbox" data-type="image" data-gallery="mst542" data-remote="img/542.png" data-title="Размеры и характеристики"></div>
-          <div class="home-card-content">
-              <h2>MST 542
-                <a href="img/544.png" class="float-right badge badge-pill badge-info text-light ml-1 px-2" data-title="MST 544 Plus" data-toggle="lightbox" role="button"><i class="fa fa-cog icons"></i></a>
-                <a href="#specsModal" class="float-right badge badge-pill badge-info text-light" data-toggle="modal" data-selected="m542" role="button"><i class="fa fa-info icons"></i></a>
-              </h2>
-            <p>Разновеликие колеса 20/28 дюймов, управление — рычаг.</p>
-            <!--<div class="progress bg-light">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 66%;" aria-valuenow="2" aria-valuemin="0" aria-valuemax="3">2 шт</div>
-            </div>-->
-            <a href="#section-contacts" class="btn btn-primary d-lg-none" role="button" aria-pressed="true">Звоните!</a>
+
+        {% for m in page.machines %}
+        <div class="col-xl-3 col-lg-3">
+            <div class="home-card mb-3">
+                <i class="fa fa-search-plus icon-zoom icons position-absolute text-muted m-2"></i>
+                {% for img in m.gallery.images %}
+                  {% if forloop.index == 1 %}
+                    <a href="{{ img.href }}" data-type="image" data-toggle="lightbox" data-gallery="{{ m.sku }}" data-title="{{ img.title }}"><img src="{{ m.gallery.tn}}" alt="{{ img.title }}"></a>
+                  {% else %}
+                    <div data-toggle="lightbox" data-type="image" data-gallery="{{ m.sku }}" data-remote="{{ img.href}}" data-title="{{ img.title }}"></div>
+                  {% endif %}
+                {% endfor %}
+              <div class="home-card-content">
+                  <h2>{{ m.title }}
+                    <a href="img/{{ m.model }}.png" class="float-right badge badge-pill badge-info text-light ml-1 px-2" data-title="{{ m.title }}" data-toggle="lightbox" role="button"><i class="fa fa-cog icons"></i></a>
+                    <a href="#specsModal" class="float-right badge badge-pill badge-info text-light" data-toggle="modal" data-selected="{{ m.sku }}" role="button"><i class="fa fa-info icons"></i></a>
+                  </h2>
+                <p>{{ m.description }} <strong>{{ m.options }}</strong></p>
+                <a href="#section-contacts" class="btn btn-primary d-lg-none" role="button" aria-pressed="true">Звоните!</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-xl-3 col-lg-3">
-        <div class="home-card">
-            <i class="fa fa-search-plus icon-zoom icons position-absolute text-muted m-2"></i>
-            <a href="img/542p-1.jpg" data-type="image" data-toggle="lightbox" data-gallery="mst542p" data-title="MST 542 PLUS"><img src="img/mst-542plus.jpg" alt="Экскаватор-погрузчик MST 542 Plus (Турция) "></a>
-            <div data-toggle="lightbox" data-type="image" data-gallery="mst542p" data-remote="img/54x-joy1.jpg" data-title="Джойстик управления MST 542 plus"></div>
-            <div data-toggle="lightbox" data-type="image" data-gallery="mst542p" data-remote="img/54x-joy2.jpg" data-title="Управления навесным оборудованием джойстиком"></div>
-            <div data-toggle="lightbox" data-type="image" data-gallery="mst542p" data-remote="img/542.png" data-title="Размеры и характеристики"></div>
-          <div class="home-card-content">
-            <h2>MST 542 Plus
-              <a href="img/544.png" class="float-right badge badge-pill badge-info text-light ml-1" data-title="MST 544 Plus" data-toggle="lightbox" role="button"><i class="fa fa-cog icons"></i></a>
-              <a href="#specsModal" class="float-right badge badge-pill badge-info text-light" data-toggle="modal" data-selected="m542p" role="button"><i class="fa fa-info icons"></i></a>
-            </h2>
-            <p>Разновеликие колеса 20/28 дюймов, управление — джойстик.</p>
-            <!--<div class="progress bg-dark">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="3" aria-valuemin="0" aria-valuemax="3">3 шт</div>
-            </div>-->
-            <a href="#section-contacts" class="btn btn-primary d-lg-none" role="button" aria-pressed="true">Звоните!</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-3 col-lg-3">
-        <div class="home-card">
-            <i class="fa fa-search-plus icon-zoom icons position-absolute text-muted m-2"></i>
-            <a href="img/544-1.jpg" data-type="image" data-toggle="lightbox" data-gallery="mst544" data-title="MST 544"><img src="img/mst-544.jpg" alt="Колесный экскаватор-погрузчик MST 544"></a>
-          <div data-toggle="lightbox" data-type="image" data-gallery="mst544" data-remote="img/544-2.jpg" data-title="MST 544"></div>
-          <div data-toggle="lightbox" data-type="image" data-gallery="mst544" data-remote="img/54x-lever1.jpg" data-title="Органы управления MST 544"></div>
-          <div data-toggle="lightbox" data-type="image" data-gallery="mst544" data-remote="img/54x-lever2.jpg" data-title="Рычаги управления навесным оборудованием"></div>
-          <div data-toggle="lightbox" data-type="image" data-gallery="mst544" data-remote="img/544.png" data-title="Размеры и характеристики"></div>
-          <div class="home-card-content">
-            <h2>MST 544
-              <a href="img/544.png" class="float-right badge badge-pill badge-info text-light ml-1" data-title="MST 544 Plus" data-toggle="lightbox" role="button"><i class="fa fa-cog icons"></i></a>
-              <a href="#specsModal" class="float-right badge badge-pill badge-info text-light" data-toggle="modal" data-selected="m544" role="button"><i class="fa fa-info icons"></i></a>
-            </h2>
-            <p>Равновеликие колеса 28", полноуправляемый, крабовый ход, управление — рычаг.</p>
-            <!--<div class="progress bg-dark">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 66%;" aria-valuenow="2" aria-valuemin="0" aria-valuemax="3">2 шт</div>
-            </div>-->
-            <a href="#section-contacts" class="btn btn-primary d-lg-none" role="button" aria-pressed="true">Звоните!</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-3 col-lg-3">
-        <div class="home-card">
-          <i class="fa fa-search-plus icon-zoom icons position-absolute text-muted m-2"></i>
-          <a href="img/544p-1.jpg" data-type="image" data-toggle="lightbox" data-gallery="mst544p" data-title="MST 544 PLUS"><img src="img/mst-544plus.jpg" alt="Колесный экскаватор-погрузчик MST 544 plus"></a>
-          <div data-toggle="lightbox" data-type="image" data-gallery="mst544p" data-remote="img/544p-2.jpg" data-title="Sanko Makina MST 544 plus"></div>
-          <div data-toggle="lightbox" data-type="image" data-gallery="mst544p" data-remote="img/54x-joy1.jpg" data-title="Джойстик управления MST 544 plus"></div>
-          <div data-toggle="lightbox" data-type="image" data-gallery="mst544p" data-remote="img/54x-joy2.jpg" data-title="Управления навесным оборудованием джойстиком"></div>  
-          <div data-toggle="lightbox" data-type="image" data-gallery="mst544p" data-remote="img/544.png" data-title="Размеры и характеристики"></div>
-          <div class="home-card-content">
-            <h2>MST 544 Plus
-                <a href="img/544.png" class="float-right badge badge-pill badge-info text-light ml-1" data-title="MST 544 Plus" data-toggle="lightbox" role="button"><i class="fa fa-cog icons"></i></a>
-                <a href="#specsModal" class="float-right badge badge-pill badge-info text-light" data-toggle="modal" data-selected="m544p" role="button"><i class="fa fa-info icons"></i></a>
-            </h2>
-            <!--<a href="img/544.png" class="float-right badge badge-pill badge-info text-light" data-title="MST 544 Plus" data-toggle="model" role="button"><i class="fa fa-info icons"></i></a>
-            --><p>Равновеликие колеса 28", полноуправляемый, крабовый ход, управление — джойстик.</p>
-            <!--<div class="progress bg-light">
-                <div class="progress-bar bg-light" role="progressbar" style="width: 100%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3">нет</div>
-            </div>-->
-            <a href="#section-contacts" class="btn btn-primary d-lg-none" role="button" aria-pressed="true">Звоните!</a>
-          </div>
-        </div>
-      </div>
+          {% endfor %}
+
+
+
+
+
+
+      
     </div>
   </div>
 </div>
@@ -238,14 +183,14 @@ layout: default
     <thead class="thead-dark">
     <tr>
     <th scope="row" style="text-align: right;">Машины в наличии:</th>
-    <th scope="col" class="m542 text-center"><strong>M542</strong></th>
-    <th scope="col" class="m542 text-center"><strong>M542</strong></th>
-    <th scope="col" class="m542p text-center"><strong>M542 Plus</strong></th>
-    <th scope="col" class="m544 text-center"><strong>M544</strong></th>
-    <th scope="col" class="m544 text-center"><strong>M544</strong></th>
-    <th scope="col" class="m544 text-center"><strong>M544</strong></th>
-    <th scope="col" class="m544p text-center"><strong>M544 Plus</strong></th>
-    <th scope="col" class="m544p text-center"><strong>M544 Plus</strong></th>
+    <th scope="col" class="mst5421 text-center"><strong>M542</strong></th>
+    <th scope="col" class="mst5422 text-center"><strong>M542</strong></th>
+    <th scope="col" class="mst542p1 text-center"><strong>M542 Plus</strong></th>
+    <th scope="col" class="mst5441 text-center"><strong>M544</strong></th>
+    <th scope="col" class="mst5442 text-center"><strong>M544</strong></th>
+    <th scope="col" class="mst5443 text-center"><strong>M544</strong></th>
+    <th scope="col" class="mst544p1 text-center"><strong>M544 Plus</strong></th>
+    <th scope="col" class="mst544p2 text-center"><strong>M544 Plus</strong></th>
     </tr>
     </thead>
     <tbody>
@@ -307,25 +252,25 @@ layout: default
     </tr>
     <tr>
     <td>Система SRS (стабилизация фронтального ковша в движении)</td>
-    <td class="m542 text-center">-</td>
-    <td class="m542 text-center">-</td>
-    <td class="m542p text-center">+</td>
-    <td class="m544 text-center">-</td>
-    <td class="m544 text-center">-</td>
-    <td class="m544 text-center">-</td>
-    <td class="m544p text-center">-</td>
-    <td class="m544p text-center">+</td>
+    <td class="mst5421 text-center">-</td>
+    <td class="mst5422 text-center">-</td>
+    <td class="mst542p1 text-center">+</td>
+    <td class="mst5441 text-center">-</td>
+    <td class="mst5442 text-center">-</td>
+    <td class="mst5443 text-center">-</td>
+    <td class="mst544p1 text-center">-</td>
+    <td class="mst544p2 text-center">+</td>
     </tr>
     <tr>
     <td>Forklift (погрузочные вилы, устанавливаемые поверх&nbsp;фронтального&nbsp; ковша)&nbsp;</td>
-    <td class="m542 text-center">-</td>
-    <td class="m542 text-center">+</td>
-    <td class="m542p text-center">-</td>
-    <td class="m544 text-center">-</td>
-    <td class="m544 text-center">-</td>
-    <td class="m544 text-center">+</td>
-    <td class="m544p text-center">-</td>
-    <td class="m544p text-center">-</td>
+    <td class="mst5421 text-center">-</td>
+    <td class="mst5422 text-center">+</td>
+    <td class="mst542p1 text-center">-</td>
+    <td class="mst5441 text-center">-</td>
+    <td class="mst5442 text-center">-</td>
+    <td class="mst5443 text-center">+</td>
+    <td class="mst544p1 text-center">-</td>
+    <td class="mst544p2 text-center">-</td>
     </tr>
     <tr>
     <td>Телескопическая рукоять экскаватора</td>
@@ -333,14 +278,14 @@ layout: default
     </tr>
     <tr>
     <td>Кондиционер</td>
-    <td class="m542 text-center">-</td>
-    <td class="m542 text-center">-</td>
-    <td class="m542p text-center">+</td>
-    <td class="m544 text-center">-</td>
-    <td class="m544 text-center">-</td>
-    <td class="m544 text-center">-</td>
-    <td class="m544p text-center">-</td>
-    <td class="m544p text-center">+</td>
+    <td class="mst5421 text-center">-</td>
+    <td class="mst5422 text-center">-</td>
+    <td class="mst542p1 text-center">+</td>
+    <td class="mst5441 text-center">-</td>
+    <td class="mst5442 text-center">-</td>
+    <td class="mst5443 text-center">-</td>
+    <td class="mst544p1 text-center">-</td>
+    <td class="mst544p2 text-center">+</td>
     </tr>
     </tbody>
     </table>
